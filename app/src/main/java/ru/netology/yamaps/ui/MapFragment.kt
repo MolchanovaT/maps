@@ -3,19 +3,13 @@ package ru.netology.yamaps.ui
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
-import androidx.navigation.fragment.findNavController
 import com.yandex.mapkit.Animation
 import com.yandex.mapkit.MapKitFactory
 import com.yandex.mapkit.geometry.Point
@@ -29,10 +23,10 @@ import com.yandex.mapkit.user_location.UserLocationObjectListener
 import com.yandex.mapkit.user_location.UserLocationView
 import com.yandex.runtime.ui_view.ViewProvider
 import kotlinx.coroutines.flow.collectLatest
-import ru.netology.yamaps.viewmodel.MapViewModel
 import ru.netology.yamaps.R
 import ru.netology.yamaps.databinding.MapFragmentBinding
 import ru.netology.yamaps.databinding.PlaceBinding
+import ru.netology.yamaps.viewmodel.MapViewModel
 
 class MapFragment : Fragment() {
 
@@ -190,7 +184,8 @@ class MapFragment : Fragment() {
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean =
                 if (menuItem.itemId == R.id.list) {
-                    findNavController().navigate(R.id.action_mapFragment_to_placesFragment)
+                    //findNavController().navigate(R.id.action_mapFragment_to_placesFragment)
+                    PlacesFragment().show(parentFragmentManager, null)
                     true
                 } else {
                     false

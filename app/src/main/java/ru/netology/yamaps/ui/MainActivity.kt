@@ -8,7 +8,6 @@ import ru.netology.yamaps.R
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        // TODO
         private const val MAPKIT_API_KEY = "__"
     }
 

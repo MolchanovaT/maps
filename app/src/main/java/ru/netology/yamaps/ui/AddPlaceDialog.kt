@@ -1,6 +1,5 @@
 package ru.netology.yamaps.ui
 
-import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.Toast
@@ -8,6 +7,7 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import ru.netology.yamaps.R
 import ru.netology.yamaps.viewmodel.MapViewModel
 import ru.netology.yamaps.dto.Place
@@ -26,7 +26,7 @@ class AddPlaceDialog : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val viewModel by viewModels<MapViewModel>()
         val view = AppCompatEditText(requireContext())
-        return AlertDialog.Builder(requireContext())
+        return MaterialAlertDialogBuilder(requireContext())
             .setView(view)
             .setTitle(getString(R.string.enter_name))
             .setPositiveButton(android.R.string.ok) { _, _ ->
